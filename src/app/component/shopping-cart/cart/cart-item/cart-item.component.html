@@ -1,0 +1,20 @@
+<body>
+    <table id="items">
+        <!-- <tr>
+            <th>Name</th>
+            <th>Quntity</th>
+            <th>Action</th>
+        </tr> -->
+
+    
+    <tr>
+        <td>{{ cartItem.productName }}</td>
+        <td>{{ cartItem.qty }}</td>
+        <!-- <td>{{ (cartItem.qty * cartItem.price) | currency:'AUD'}}</td> -->
+        <td>
+            <button  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+        </td>
+    </tr>
+</table>
+</body>
+
