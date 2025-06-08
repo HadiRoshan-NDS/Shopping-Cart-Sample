@@ -5,16 +5,16 @@ import { addToCart, removeFromCart, reset } from './cart.actions';
 
 export const initialState = 0;
 
-  // /**
-  //  * Define a reducer function for add to cart
-  //  */
+// /**
+//  * Define a reducer function for add to cart
+//  */
 const _cartReducer = createReducer(
   initialState,
-  on(addToCart, (state, {amount}) => state + amount),
+  on(addToCart, (state, { amount }) => state + amount),
   on(reset, (state) => 0)
 );
 
-export function cartReducer(state, action) {
+export function cartReducer(state: any, action: any) {
   return _cartReducer(state, action);
 }
 
@@ -24,15 +24,14 @@ const _cartRemover = createReducer(
   on(reset, (state) => 0)
 );
 
-export function cartRemover(state, action) {
+export function cartRemover(state: any, action: any) {
   return _cartRemover(state, action);
 }
 
 // intilize the interface for register
 
 const firstInitialState: AuthStateInterface = {
-
-  isSubmitting: false
-}
+  isSubmitting: false,
+};
 
 // const authReducer = createReducer(firstInitialState, on(RegisterComponent))

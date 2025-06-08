@@ -70,11 +70,23 @@ export class CartComponent implements OnInit {
     });
   }
 
-  removeCartItem(product: Product) {
-    this.cartItems.map((index: any) => {
-      if (product.name === product.name) {
+  removeCartItem(itemToRemove: any) {
+    const index = this.cartItems.findIndex(
+      (item: { productName: any }) =>
+        item.productName === itemToRemove.productName
+    );
+
+    if (index !== -1) {
+      const currentItem = this.cartItems[index];
+
+      this.itemTotal -= 1;
+      this.store.dispatch(addToCart({ amount: -currentItem.price }));
+
+      if (currentItem.qty > 1) {
+        this.cartItems[index].qty -= 1;
+      } else {
         this.cartItems.splice(index, 1);
       }
-    });
+    }
   }
 }
